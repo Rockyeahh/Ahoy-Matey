@@ -6,15 +6,15 @@ public class FireCannons : MonoBehaviour {
 
     public GameObject cannonBallRight, cannonBallLeft, cannonBallHolder;
 
-    private GameObject projectileParent;
+ //   private GameObject projectileParent;
 
     // Use this for initialization
     void Start () {
-        projectileParent = GameObject.Find("projectiles");
-        if (projectileParent == null)
-        {
-            projectileParent = new GameObject("projectiles");
-        }
+       // projectileParent = GameObject.Find("projectiles");
+       // if (projectileParent == null)
+      //  {
+       //     projectileParent = new GameObject("projectiles");
+       // }
     }
 	
 	// Update is called once per frame
@@ -32,16 +32,20 @@ public class FireCannons : MonoBehaviour {
 
     private void Fire1()
     {
-        GameObject newProjectile2 = Instantiate(cannonBallLeft) as GameObject;
-        newProjectile2.transform.parent = projectileParent.transform;
-        newProjectile2.transform.position = cannonBallHolder.transform.position;
+        //  GameObject newProjectile2 = Instantiate(cannonBallLeft) as GameObject;
+        // newProjectile2.transform.parent = projectileParent.transform;
+        //  newProjectile2.transform.position = cannonBallHolder.transform.position;
+        //  Instantiate(cannonBallLeft, cannonBallHolder.transform);
+        Instantiate(cannonBallLeft, cannonBallHolder.transform);
     }
 
     private void Fire2()
     {
-        GameObject newProjectile1 = Instantiate(cannonBallRight) as GameObject;
-        newProjectile1.transform.parent = projectileParent.transform;
-        newProjectile1.transform.position = cannonBallHolder.transform.position;
+        // GameObject newProjectile1 = Instantiate(cannonBallRight) as GameObject;
+        //newProjectile1.transform.parent = projectileParent.transform;
+        // newProjectile1.transform.position = cannonBallHolder.transform.position;
+        /// Instantiate(cannonBallRight, cannonBallHolder.transform);
+         Instantiate(cannonBallRight, cannonBallHolder.transform);
     }
 
 }

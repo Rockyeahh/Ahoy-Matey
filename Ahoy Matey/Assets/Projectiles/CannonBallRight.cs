@@ -5,17 +5,20 @@ using UnityEngine;
 public class CannonBallRight : MonoBehaviour {
 
     public float speed, damage;
+    public float launchForce;
+
+    public GameObject cannons;
 
     Rigidbody rigidBody;
 
-    // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
+        rigidBody.AddForce(transform.parent.transform.right * launchForce, ForceMode.Impulse);
     }
 	
-	// Update is called once per frame
 	void Update () {
-        rigidBody.velocity = transform.right * speed * Time.deltaTime; // Starboard is right.
-        print("Fire right");
+        // rigidBody.velocity = transform.right * speed * Time.deltaTime; // Starboard is right.
+       // rigidBody.AddForce(new Vector3(speed * Time.deltaTime, 0, 0));
+       // print("Fire right");
     }
 }
