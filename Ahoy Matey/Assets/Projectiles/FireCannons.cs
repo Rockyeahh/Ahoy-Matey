@@ -6,6 +6,9 @@ public class FireCannons : MonoBehaviour {
 
     public GameObject cannonBallRight, cannonBallLeft, cannonBallHolder;
 
+   // public Rigidbody cannonBallRightClone;
+    //public Rigidbody cannonBallLeftClone;
+
  //   private GameObject projectileParent;
 
     // Use this for initialization
@@ -35,8 +38,9 @@ public class FireCannons : MonoBehaviour {
         //  GameObject newProjectile2 = Instantiate(cannonBallLeft) as GameObject;
         // newProjectile2.transform.parent = projectileParent.transform;
         //  newProjectile2.transform.position = cannonBallHolder.transform.position;
-        //  Instantiate(cannonBallLeft, cannonBallHolder.transform);
         Instantiate(cannonBallLeft, cannonBallHolder.transform);
+        // cannonBallLeft.player.transform       Also try if cannonBallLeft transform.position !transform.position == player.transform. 
+                                                // Then set transform.position = player.transform.position.
     }
 
     private void Fire2()
@@ -44,8 +48,14 @@ public class FireCannons : MonoBehaviour {
         // GameObject newProjectile1 = Instantiate(cannonBallRight) as GameObject;
         //newProjectile1.transform.parent = projectileParent.transform;
         // newProjectile1.transform.position = cannonBallHolder.transform.position;
-        /// Instantiate(cannonBallRight, cannonBallHolder.transform);
-         Instantiate(cannonBallRight, cannonBallHolder.transform);
+
+        //  GameObject bleep = GameObject.Instantiate(cannonBallRight, transform.position, transform.rotation);
+        //Instantiate(bleep.transform.parent = gameObject.transform.parent, cannonBallHolder.transform); // Maybe it isn't instantiating correctly and it needs to set itself to the player ship transform.
+
+        Instantiate(cannonBallRight, cannonBallHolder.transform);
+
+       // Rigidbody clone;
+        //clone = Instantiate(cannonBallRightClone, transform.position, transform.rotation) as Rigidbody;
     }
 
 }

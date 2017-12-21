@@ -14,6 +14,7 @@ public class CannonBallLeft : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
+        // Maybe they need to set their transform to the same as the player ship here, before firing.
         rigidBody.AddForce(-transform.parent.transform.right * launchForce, ForceMode.Impulse);
     }
 	
